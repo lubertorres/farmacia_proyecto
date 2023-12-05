@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+
+    <nav id="barra" class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Farmacia Istg</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/producto/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="http://127.0.0.1:8000/producto/Detalleproducto/">Productos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="http://127.0.0.1:8000/producto/AboutUs/">Quienes somos</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+        <div class="container">
+        <h1>Gestion Inventario</h1>
+        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+            <a type="button" class="btn btn-danger" href="">Agregar Articulo +</a>
+            <button type="button" class="btn btn-warning">Modificar Articulo</button>
+            <button type="button" class="btn btn-success">Eliminar Artiuclo</button>
+        </div>
+    </div>
+    <div class="container cuerpo">
+        <div class="shadow-lg p-3 mb-5 bg-body rounded">
+
+            <table class="table">
+                <thead>
+
+                    <tr>
+                        <th scope="col">Cod. Art</th>
+                        <th scope="col">Usuario Creacion</th>
+                        <th scope="col">Usuario Modificacion</th>
+                        <th scope="col">Descripcion</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Fecha Creacion</th>
+                        <th scope="col">Fecha Modificacion</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+
+                </thead>
+                <tbody id="resultado">
+
+
+                    <tr>
+                        <td>1</td>
+                        <td>David Tumbaco</td>
+                        <td>David Tumbaco</td>
+                        <td>Jarabe para la tos </td>
+                        <td>8</td>
+                        <td>8.00</td>
+                        <td>2023-12-04 23:47:26.903</td>
+                        <td>2023-12-05 09:47:26.903</td>
+                        <td>
+
+                          <!-- start delete -->
+                          <button class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="setId('${item.id}')">
+                              <i class="bi bi-trash-fill "></i>
+                          </button>
+  
+                          <!-- start edit -->
+                          <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#form-edit" onclick="setDataFormUser('${item.id}', '${item.nombreCompleto}', '${item.email}', '${item.contrasenia}', '${item.estado}')">
+                              <i class="bi bi-pencil-square"></i>
+                          </button>
+  
+                          </td>
+                    </tr>
+
+
+
+                    <tr>
+                      <td>2</td>
+                      <td>David Tumbaco</td>
+                      <td>David Tumbaco</td>
+                      <td>Jeringa 5mm </td>
+                      <td>12</td>
+                      <td>0.25</td>
+                      <td>2023-12-04 23:47:26.903</td>
+                      <td>2023-12-05 09:47:26.903</td>
+                      <td>
+
+                        <!-- start delete -->
+                        <button class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="setId('${item.id}')">
+                            <i class="bi bi-trash-fill "></i>
+                        </button>
+
+                        <!-- start edit -->
+                        <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#form-edit" onclick="setDataFormUser('${item.id}', '${item.nombreCompleto}', '${item.email}', '${item.contrasenia}', '${item.estado}')">
+                            <i class="bi bi-pencil-square"></i>
+                        </button>
+
+                        </td>
+                  </tr>
+
+                  <tr>
+                    <td>2</td>
+                    <td>David Tumbaco</td>
+                    <td>David Tumbaco</td>
+                    <td>Jeringa 3mm </td>
+                    <td>12</td>
+                    <td>0.20</td>
+                    <td>2023-12-04 23:47:26.903</td>
+                    <td>2023-12-05 09:47:26.903</td>
+                    <td>
+
+                      <!-- start delete -->
+                      <button class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="setId('${item.id}')">
+                          <i class="bi bi-trash-fill "></i>
+                      </button>
+
+                      <!-- start edit -->
+                      <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#form-edit" onclick="setDataFormUser('${item.id}', '${item.nombreCompleto}', '${item.email}', '${item.contrasenia}', '${item.estado}')">
+                          <i class="bi bi-pencil-square"></i>
+                      </button>
+
+                      </td>
+                </tr>
+
+
+                    <script type="application/javascript">
+                        
+                    </script>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+<style>
+    #barra
+    {
+     background-color: rgb(217, 196, 196);   
+
+    }
+    #navbarNav
+    {
+     background-color: rgb(217, 196, 196);   
+    }
+</style>
+</html>
